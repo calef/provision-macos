@@ -38,6 +38,7 @@ function doIt() {
 
 	#install pretty-dam-quick
 	cd pretty-dam-quick
+	git pull origin master
 	./go
 
 	cd "$(dirname "${BASH_SOURCE}")";
