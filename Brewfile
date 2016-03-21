@@ -1,5 +1,5 @@
 brew 'bash'
-brew 'bash-completion2'
+#brew 'bash-completion2'
 brew 'cowsay'
 brew 'dark-mode'
 brew 'exiv2'
