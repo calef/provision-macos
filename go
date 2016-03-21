@@ -24,12 +24,11 @@ function doIt() {
 		--exclude "bin/" --exclude "init/" -avh --no-perms . ~;
 	source ~/.bash_profile;
 
-	#install perlbrew
-	curl -L http://install.perlbrew.pl | bash
+	#install local::lib
+	cpan -i local::lib
 
-	#install perl
-	perlbrew install perl-5.22.1
-	perlbrew switch perl-5.22.1
+	#bootstrap local::lib for next command
+	eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
 
 	#install projects
 	mkdir -p ~/Projects
