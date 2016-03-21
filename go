@@ -30,15 +30,15 @@ function doIt() {
 	#bootstrap local::lib for next command
 	eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
 
-	#install projects
+	#install pretty-dam-quick
 	mkdir -p ~/Projects
 	cd ~/Projects
 	git clone https://github.com/MotoFish/pretty-dam-quick.git
-
-	#install pretty-dam-quick
 	cd pretty-dam-quick
 	git pull origin master
 	./go
+	cd ..
+	rm -rf pretty-dam-quick
 
 	cd "$(dirname "${BASH_SOURCE}")";
 }
