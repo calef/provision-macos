@@ -20,7 +20,7 @@ function doIt() {
 	git pull origin master;
 
 	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "Brewfile" \
-		--exclude "README.md" --exclude "LICENSE-MIT.txt" --exclude "go" --exclude "go-perl" \
+		--exclude "README.md" --exclude "LICENSE" --exclude "go" \
 		--exclude "bin/" --exclude "init/" -avh --no-perms . ~;
 	source ~/.bash_profile;
 
