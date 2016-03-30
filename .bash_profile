@@ -47,5 +47,5 @@ complete -W "NSGlobalDomain" defaults;
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
 
-#use local::lib
-eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
+#use perlbrew
+source ~/perl5/perlbrew/etc/bashrc
