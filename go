@@ -16,7 +16,9 @@ brew brewdle
 cd "$(dirname "${BASH_SOURCE}")";
 rsync --exclude ".git/" --exclude ".DS_Store" --exclude "Brewfile" \
 	--exclude "README.md" --exclude "LICENSE" --exclude "go" \
-	--exclude "bin/" --exclude "init/" -avh --no-perms . ~;
+	--exclude "osx.bash" --exclude "init/" -avh --no-perms . ~;
 
 #change the shell to fish
 chsh -s /usr/local/bin/fish
+
+source ~/.config/fish/config.fish
