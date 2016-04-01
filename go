@@ -17,4 +17,6 @@ cd "$(dirname "${BASH_SOURCE}")";
 rsync --exclude ".git/" --exclude ".DS_Store" --exclude "Brewfile" \
 	--exclude "README.md" --exclude "LICENSE" --exclude "go" \
 	--exclude "bin/" --exclude "init/" -avh --no-perms . ~;
-source ~/.bash_profile;
+
+#change the shell to fish
+chsh -s /usr/local/bin/fish

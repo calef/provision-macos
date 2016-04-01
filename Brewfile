@@ -1,5 +1,4 @@
-brew 'bash'
-brew 'bash-completion'
 brew 'cowsay'
+brew 'fish'
 brew 'git'
 brew 'gphoto2'
