@@ -8,4 +8,5 @@ function update
 	npm update -g
 	sudo gem update --system
 	sudo gem update
+	fish_update_completions
 end
