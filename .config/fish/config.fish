@@ -13,4 +13,3 @@ set -x PYTHONIOENCODING UTF-8
 set -x PATH  ~/perl5/perlbrew/bin/perlbrew:/usr/local/opt/ruby@2.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 . ~/perl5/perlbrew/etc/perlbrew.fish
-. ~/.extra
