@@ -7,10 +7,8 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 #install homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-# Make it so that we can use our Brewfile
-brew tap 'homebrew/brewdler'
-brew brewdle
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew bundle
 
 #install dotfiles
 cd "$(dirname "${BASH_SOURCE}")";
