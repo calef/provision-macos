@@ -1,6 +1,6 @@
 brew 'awscli'
-brew 'fish'
 brew 'git'
+brew 'gpg'
 brew 'imageoptim-cli'
 brew 'node'
 brew 'ruby@2.7'
