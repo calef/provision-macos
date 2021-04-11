@@ -1,4 +1,5 @@
 brew 'awscli'
+brew 'curl'
 brew 'git'
 brew 'gpg'
 brew 'imageoptim-cli'
