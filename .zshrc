@@ -9,7 +9,7 @@ export MANPAGER="less -X"
 export NODE_REPL_HISTORY=~/.node_history
 export NODE_REPL_HISTORY_SIZE=$HISTFILESIZE
 export NODE_REPL_MODE=sloppy
-export PYTHONIOENCODING+UTF-8
+export PYTHONIOENCODING=UTF-8
 export PATH=~/perl5/perlbrew/bin/perlbrew:~/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
