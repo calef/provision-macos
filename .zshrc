@@ -1,3 +1,4 @@
+export CLICOLOR=1
 export EDITOR="/usr/local/bin/mate -w"
 export HISTCONTROL=ignoreboth
 export HISTFILESIZE=32768 
