@@ -10,10 +10,15 @@ export MANPAGER="less -X"
 export NODE_REPL_HISTORY=~/.node_history
 export NODE_REPL_HISTORY_SIZE=$HISTFILESIZE
 export NODE_REPL_MODE=sloppy
-export PYTHONIOENCODING=UTF-8
-export PATH=~/perl5/perlbrew/bin/perlbrew:~/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export NVM_DIR="$HOME/.nvm"
+export PATH=./node_modules/.bin/:~/perl5/perlbrew/bin/perlbrew:~/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 alias p='cd ~/projects'
 alias update='sudo softwareupdate -i -a && brew update && brew upgrade && brew cleanup'
 alias xyzzy='echo "Nothing happens"'
+
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+source ~/perl5/perlbrew/etc/bashrc
