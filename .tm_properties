@@ -1,5 +1,4 @@
 TM_GIT         = "/usr/local/bin/git"
-excludeDirectories = "_site"
 
 fontName       = "Monaco" 
 fontSize       = 13
