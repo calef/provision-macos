@@ -1,7 +1,7 @@
 # provision-osx
-Provisions a new OSX host for use at MotoFish
+Provisions a new OSX host for use with all of my preferences.
 
-To provision a new host at MotoFish open Terminal and type:
+To provision a new host open Terminal and type:
 
 git clone https://github.com/MotoFish/provision-osx.git && cd provision-osx && ./go
 
