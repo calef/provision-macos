@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+cd script/ensure-scripts
+./ensure-firefox
+./ensure-git
+./ensure-github
+./ensure-google-chrome
+./ensure-grammarly
+./ensure-mac-cli
+./ensure-nova
+./ensure-oh-my-zsh
+./ensure-omnigraffle
+./ensure-omniplan-3
+./ensure-perlbrew
+./ensure-slack
+./ensure-steam
+./ensure-vagrant
+./ensure-zoom
+cd -
+git submodule update
+touch $HOME/.hushlogin

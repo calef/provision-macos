@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# ~/.osx — https://mths.be/osx
+./script/bootstrap
 
 # Ask for the administrator password upfront
 sudo -v
@@ -67,12 +67,6 @@ defaults write com.apple.helpviewer DevMode -bool true
 # in the login window
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
-# Restart automatically if the computer freezes
-sudo systemsetup -setrestartfreeze on
-
-# Never go into computer sleep mode
-sudo systemsetup -setcomputersleep Off > /dev/null
-
 # Check for software updates daily, not just once per week
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
@@ -96,16 +90,6 @@ sudo pmset -a sms 0
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
 
-# Increase sound quality for Bluetooth headphones/headsets
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
-
-# Enable full keyboard access for all controls
-# (e.g. enable Tab in modal dialogs)
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
-
-# Disable press-and-hold for keys in favor of key repeat
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
-
 # Set language and text formats
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
 # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
@@ -113,9 +97,6 @@ defaults write NSGlobalDomain AppleLanguages -array "en"
 defaults write NSGlobalDomain AppleLocale -string "en_US@currency=USD"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Inches"
 defaults write NSGlobalDomain AppleMetricUnits -bool false
-
-# Disable auto-correct
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 ###############################################################################
 # Screen                                                                      #
@@ -209,9 +190,9 @@ sudo chflags nohidden /Volumes
 # Expand the following File Info panes:
 # “General”, “Open with”, and “Sharing & Permissions”
 defaults write com.apple.finder FXInfoPanesExpanded -dict \
-	General -bool true \
-	OpenWith -bool true \
-	Privileges -bool true
+  General -bool true \
+  OpenWith -bool true \
+  Privileges -bool true
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
@@ -268,28 +249,28 @@ find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -dele
 # 	MENU_WEBSEARCH             (send search queries to Apple)
 # 	MENU_OTHER
 defaults write com.apple.spotlight orderedItems -array \
-	'{"enabled" = 1;"name" = "APPLICATIONS";}' \
-	'{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
-	'{"enabled" = 1;"name" = "DIRECTORIES";}' \
-	'{"enabled" = 1;"name" = "PDF";}' \
-	'{"enabled" = 1;"name" = "FONTS";}' \
-	'{"enabled" = 0;"name" = "DOCUMENTS";}' \
-	'{"enabled" = 0;"name" = "MESSAGES";}' \
-	'{"enabled" = 0;"name" = "CONTACT";}' \
-	'{"enabled" = 0;"name" = "EVENT_TODO";}' \
-	'{"enabled" = 0;"name" = "IMAGES";}' \
-	'{"enabled" = 0;"name" = "BOOKMARKS";}' \
-	'{"enabled" = 0;"name" = "MUSIC";}' \
-	'{"enabled" = 0;"name" = "MOVIES";}' \
-	'{"enabled" = 0;"name" = "PRESENTATIONS";}' \
-	'{"enabled" = 0;"name" = "SPREADSHEETS";}' \
-	'{"enabled" = 0;"name" = "SOURCE";}' \
-	'{"enabled" = 0;"name" = "MENU_DEFINITION";}' \
-	'{"enabled" = 0;"name" = "MENU_OTHER";}' \
-	'{"enabled" = 0;"name" = "MENU_CONVERSION";}' \
-	'{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
-	'{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
-	'{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
+  '{"enabled" = 1;"name" = "APPLICATIONS";}' \
+  '{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
+  '{"enabled" = 1;"name" = "DIRECTORIES";}' \
+  '{"enabled" = 1;"name" = "PDF";}' \
+  '{"enabled" = 1;"name" = "FONTS";}' \
+  '{"enabled" = 0;"name" = "DOCUMENTS";}' \
+  '{"enabled" = 0;"name" = "MESSAGES";}' \
+  '{"enabled" = 0;"name" = "CONTACT";}' \
+  '{"enabled" = 0;"name" = "EVENT_TODO";}' \
+  '{"enabled" = 0;"name" = "IMAGES";}' \
+  '{"enabled" = 0;"name" = "BOOKMARKS";}' \
+  '{"enabled" = 0;"name" = "MUSIC";}' \
+  '{"enabled" = 0;"name" = "MOVIES";}' \
+  '{"enabled" = 0;"name" = "PRESENTATIONS";}' \
+  '{"enabled" = 0;"name" = "SPREADSHEETS";}' \
+  '{"enabled" = 0;"name" = "SOURCE";}' \
+  '{"enabled" = 0;"name" = "MENU_DEFINITION";}' \
+  '{"enabled" = 0;"name" = "MENU_OTHER";}' \
+  '{"enabled" = 0;"name" = "MENU_CONVERSION";}' \
+  '{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
+  '{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
+  '{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
 # Load new settings before rebuilding the index
 killall mds > /dev/null 2>&1
 # Make sure indexing is enabled for the main volume
@@ -360,9 +341,9 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 ###############################################################################
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-	"Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Mail" "Messages" \
-	"Opera" "Photos" "Safari" "SizeUp" "Spectacle" "SystemUIServer" "Terminal" \
-	"Tweetbot" "Twitter" "iCal"; do
-	killall "${app}" &> /dev/null
+  "Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Mail" "Messages" \
+  "Opera" "Photos" "Safari" "SizeUp" "Spectacle" "SystemUIServer" "Terminal" \
+  "Tweetbot" "Twitter" "iCal"; do
+  killall "${app}" &> /dev/null
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
