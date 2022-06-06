@@ -1,3 +1,0 @@
-[submodule "ensure-scripts"]
-	path = ensure-scripts
-	url = git@github.com:calef/ensure-scripts.git
