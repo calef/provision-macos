@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd script/ensure-scripts
+cd ./ensure-scripts
 ./ensure-firefox
 ./ensure-git
 ./ensure-github
