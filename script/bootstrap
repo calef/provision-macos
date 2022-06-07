@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+git submodule update
 cd ./ensure-scripts
 ./ensure-firefox
 ./ensure-git
@@ -17,5 +18,4 @@ cd ./ensure-scripts
 ./ensure-vagrant
 ./ensure-zoom
 cd -
-git submodule update
 touch $HOME/.hushlogin
